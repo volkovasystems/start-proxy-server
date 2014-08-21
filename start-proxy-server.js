@@ -1,4 +1,4 @@
-var startProxyServer = function startProxyServer( host, port, proxyPort, handlerSet ){
+var startProxyServer = function startProxyServer( port, handlerSet, boundProxyServerURL ){
 
 	var options = { target: {
 		host: host,
@@ -17,6 +17,7 @@ var startProxyServer = function startProxyServer( host, port, proxyPort, handler
 	return proxy;
 };
 
-var httpProxy = require( "http-proxy" );
+var http = require( "http" );
+var express = require( "express" ); 
 
-exports.startProxyServer = startProxyServer;
+module.exports = startProxyServer;
